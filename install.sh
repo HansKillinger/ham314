@@ -38,3 +38,14 @@ make -j4
 sudo make install
 make install-conf
 cd ..
+echo 'Install js8call 2.2.0'
+wget http://files.js8call.com/2.2.0/js8call_2.2.0_armhf.deb
+sudo dpkg -i js8call_2.2.0_armhf.deb
+echo 'Install Chirp'
+sudo apt install git python3-wxgtk4.0 python3-serial python3-six python3-future python3-requests python3-pip -y
+wget https://archive.chirpmyradio.com/chirp_next/next-20240312/chirp-20240312-py3-none-any.whl
+pip install ./chirp-20240312-py3-none-any.whl
+echo 'Install Grid Tracker'
+curl  https://debian.gridtracker.org/gridtracker_deb_install.sh | sudo bash
+sudo apt-get update
+sudo apt-get install gridtracker
