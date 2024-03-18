@@ -30,7 +30,7 @@ sudo make install
 cd ..
 
 echo 'Adding user bob to dialout'
-sudo usermod -a -G dialout bob
+sudo usermod -a -G dialout $USER
 
 echo 'Building Direwolf'
 sudo apt-get install git gcc g++ make cmake libasound2-dev libudev-dev -y
