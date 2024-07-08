@@ -86,8 +86,8 @@ sudo cp /usr/local/lib/aarch64-linux-gnu/libtqsllib.so /usr/lib/libtqsllib.so
 cd ..
 
 echo 'Install WSJT-X'
-wget https://sourceforge.net/projects/wsjt/files/wsjtx-2.6.1/wsjtx_2.6.1_armhf.deb
-sudo dpkg -i wsjtx_2.6.1_armhf.deb
+wget https://sourceforge.net/projects/wsjt/files/wsjtx-2.6.1/wsjtx_2.6.1_armhf.deb -y
+sudo apt --fix-broken install -y
 
 echo 'Build QSSTV'
 sudo apt install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools -y
