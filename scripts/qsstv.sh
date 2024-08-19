@@ -1,4 +1,5 @@
 echo 'Build QSSTV'
+cd ~/build
 sudo apt install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools -y
 sudo apt-get install pkg-config g++ libfftw3-dev libpulse-dev -y
 sudo apt-get install libasound2-dev  libv4l-dev -y
@@ -9,4 +10,3 @@ cd QSSTV/src/build
 qmake ..
 make -j4
 sudo make install
-cd ~/build
