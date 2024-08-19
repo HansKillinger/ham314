@@ -1,4 +1,5 @@
 echo 'Building Hamlib 4.5.5'
+cd ~/build
 sudo apt-get update
 sudo apt-get install libfltk1.3-dev libjpeg9-dev libxft-dev libxinerama-dev libxcursor-dev libsndfile1-dev libsamplerate0-dev portaudio19-dev libusb-1.0-0-dev libpulse-dev libudev-dev texinfo -y
 sudo apt-get install -y libjpeg62-turbo-dev
@@ -9,4 +10,3 @@ cd hamlib-4.5.5
 make
 sudo make install
 sudo ldconfig
-cd ~/build
