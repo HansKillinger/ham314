@@ -1,4 +1,5 @@
 echo 'Install XASTIR'
+cd ~/build
 sudo apt-get install build-essential -y
 sudo apt-get install git autoconf automake xorg-dev graphicsmagick gv libmotif-dev libcurl4-openssl-dev -y
 sudo apt-get install gpsman gpsmanshp libpcre3-dev libproj-dev libdb5.3-dev python-dev libax25-dev libwebp-dev -y
@@ -14,4 +15,3 @@ cd build
 make 
 sudo make install
 sudo chmod u+s /usr/local/bin/xastir
-cd ~/build
