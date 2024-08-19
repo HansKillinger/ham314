@@ -29,7 +29,7 @@ make
 sudo make install
 cd ..
 
-echo 'Adding user bob to dialout'
+echo 'Adding user to dialout'
 sudo usermod -a -G dialout $USER
 
 echo 'Building Direwolf'
@@ -100,5 +100,12 @@ cd QSSTV/src/build
 qmake ..
 make -j4
 sudo make install
+cd ~
+
+echo 'Build PCSI'
+sudo apt install python3-opencv python3-tk python3-pil.imagetk -y
+sudo pip install numpy imageio pylbfgs pyserial pillow
+sudo pip install bitstring==4.1.4
+git clone https://github.com/maqifrnswa/PCSI.git
 
 echo 'Install Complete :)'
