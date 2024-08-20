@@ -8,3 +8,7 @@ cmake ..
 make -j4
 sudo make install
 make install-conf
+cd build
+sudo cpack -G DEB
+sudo apt install ./direwolf-*.deb
+sudo apt-mark hold direwolf
