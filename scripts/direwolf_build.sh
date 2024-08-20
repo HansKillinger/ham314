@@ -6,9 +6,9 @@ cd direwolf
 mkdir build && cd build
 cmake ..
 make -j4
-sudo make install
-make install-conf
-cd build
+# sudo make install
+# make install-conf
+
 sudo cpack -G DEB
 sudo apt install ./direwolf-*.deb
 sudo apt-mark hold direwolf
