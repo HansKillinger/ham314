@@ -12,5 +12,7 @@ for f in *.sh; do
   bash "$f"
 done
 
+sudo apt install hamradiomenus -y
+
 cd ~
 echo 'Install Complete :)'
