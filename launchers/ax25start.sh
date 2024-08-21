@@ -7,28 +7,12 @@ sudo -u kd9yqk direwolf -t 0 -c /home/kd9yqk/direwolf-node.conf -p &
 
 #Check if Direwolf is running
 echo "Sleeping 5 sec."
-
-#sleep 5
-#if [ -z "`ps ax | grep -v grep | grep direwolf`" ]; then
-#  echo -e "\nERROR: Direwolf did not start properly and is not running, please review direwolf.conf"
-#  exit 1
-#fi
-
-#echo "Installing one KISS connection on PTY port /tmp/kisstnc"
-#mkiss -s 19200 -x 1 /tmp/kisstnc > /tmp/unix98
-
-#This creates a PTS interface like "/dev/pts/3"
-#export PTS0=`more /tmp/unix98 | grep -w /dev | cut -b -11`
-#echo "PTS0 device: $PTS0"
-#sudo kissattach $PTS0 ax0
-
-#sudo modprobe netrom
-#sudo nrattach netrom
-#sudo netromd
-#sudo ax25d
-#sudo mheardd
-
 sleep 5
+if [ -z "`ps ax | grep -v grep | grep direwolf`" ]; then
+  echo -e "\nERROR: Direwolf did not start properly and is not running, please review direwolf.conf"
+  exit 1
+fi
+
 sudo modprobe netrom
 nrdevice=`ifconfig | grep nr0 | wc -l`
 if [ $nrdevice -eq 0 ]; then
@@ -37,10 +21,9 @@ fi
 
 sudo kissattach `ls -l /tmp/kisstnc | awk '{ print $11 }'` ax0
 
-
 sudo kissparms -c 1 -p ax0  # fix invalid port first to tries on direwolf
 sudo ax25d  # for rmsgw only
-#sudo /etc/ax25/nodebackup.sh  # restore node table and routes we heard last time
+sudo /etc/ax25/nodebackup.sh  # restore node table and routes we heard last time
 sudo /usr/sbin/netromd        # Start the netrom service, lists for nodes/routes
 sudo mheardd
 #sudo route del -net 44.0.0.0 netmask 255.0.0.0  # kill tcp traffic to ax0, updatesysop.py hits api.winlink.org on net 44
