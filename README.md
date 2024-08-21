@@ -1,4 +1,4 @@
-Auto build scripts for Ham Radio Apps on Raspberry Pi OS Bookworm 32bit
+Auto build scripts for Ham Radio Apps on Raspberry Pi OS Bullseye 32bit
 
 Intended to be used on a fresh OS install
 
