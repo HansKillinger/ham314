@@ -1,0 +1,7 @@
+# /etc/ax25/nrports
+#
+# The format of this file is:
+#
+# name callsign alias paclen description
+#
+netrom	KD9YQK-6 #AURORA	235	144.030 Packet

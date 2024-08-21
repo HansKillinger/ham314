@@ -1,0 +1,7 @@
+# /etc/ax25/nrbroadcast
+#
+# The format of this file is:
+#
+# ax25_name min_obs def_qual worst_qual verbose
+#
+ax0	5	192	100	0
