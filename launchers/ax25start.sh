@@ -3,7 +3,7 @@
 #PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/etc/ax25:/usr/local/ax25
 
 echo "Starting direwolf"
-sudo -u kd9yqk direwolf -t 0 -c /home/kd9yqk/direwolf-node.conf -p &
+sudo -u kd9yqk direwolf -t 0 -c /home/kd9yqk/direwolf-node.conf -p ? /tmp/direwolf.log &
 
 #Check if Direwolf is running
 echo "Sleeping 5 sec."
