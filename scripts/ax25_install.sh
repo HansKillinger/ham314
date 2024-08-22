@@ -1,9 +1,9 @@
 echo "Install AX.25 Packet Node"
-sudo dpkg -y -i ../deb/direwolf*.deb
-sudo dpkg -y -i ../deb/ax25apps*.deb
-sudo dpkg -y -i ../deb/ax25tools*.deb
-sudo dpkg -y -i ../deb/libax25-dev*.deb
-sudo dpkg -y -i ../deb/libax25_1*.deb
+sudo dpkg -i ../deb/direwolf*.deb
+sudo dpkg -i ../deb/ax25apps*.deb
+sudo dpkg -i ../deb/ax25tools*.deb
+sudo dpkg -i ../deb/libax25-dev*.deb
+sudo dpkg -i ../deb/libax25_1*.deb
 #sudo apt-get install ax25-tools ax25-apps telnet ax25-node -y
 sudo apt install uronode openbsd-inetd tcpd -y
 sudo cp ../conf/ax25/* /etc/ax25
