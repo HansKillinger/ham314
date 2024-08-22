@@ -12,11 +12,11 @@ Installs the following
 7. FLDigi - Build
 8. Direwolf - Prebuilt deb
 9. AX.25
-  - ax25apps - Prebuilt deb
-  - ax25tools - Prebuilt deb
-  - libax25 - Prebuilt deb
-  - libax25-dev Prebuilt deb
-  - uronode - Repo
+   - ax25apps - Prebuilt deb
+   - ax25tools - Prebuilt deb
+   - libax25 - Prebuilt deb
+   - libax25-dev Prebuilt deb
+   - uronode - Repo
 10. Xastir - Build
 11. Q-SSTV - Build
 12. Chirp - Not working!!!
