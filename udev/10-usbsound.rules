@@ -1,1 +1,2 @@
-
+SUBSYSTEM=="sound", ATTRS{idVendor}=="1b3f", ATTRS{idProduct}=="2008", ATTR{id}="G90"
+SUBSYSTEM=="sound", ATTRS{idVendor}=="08bb", ATTRS{idProduct}=="2902", ATTR{id}="RT95"
