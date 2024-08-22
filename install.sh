@@ -30,5 +30,5 @@ sudo udevadm trigger
 #  bash "$f"
 #done
 
-sudo apt install hamradiomenus -y
+sudo apt install extra-xdg-menus -y
 echo 'Install Complete :)'
