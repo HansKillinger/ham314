@@ -1,4 +1,6 @@
 echo "Install AX.25 Packet Node"
+sleep 1
+sudo apt install gpsd libgps28 -y
 sudo dpkg -i ../deb/direwolf*.deb
 sudo dpkg -i ../deb/ax25apps*.deb
 sudo dpkg -i ../deb/ax25tools*.deb
