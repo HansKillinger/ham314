@@ -1,6 +1,8 @@
 echo "Installing AX.25"
-echo "Removing Avahi and other bloat"
-sudo dpkg -r avahi-daemon ipp-usb libnss-mdns
+echo "Disable Avahi"
+sudo systemctl disable avahi-daemon
+sudo systemctl stop avahi-daemon
+sudo systemctl stop avahi-daemon.socket
 
 echo "Disable modemmanager - Breaks AX.25 serial ports"
 sudo systemctl disable ModemManager.service
