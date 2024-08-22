@@ -20,7 +20,7 @@ sleep 1
 bash scripts/ramdrives.sh
 sleep 1
 if echo $USER | grep -qw 'kd9yqk'; then
-    echo "Custom UDEV for DK9YQK"
+    echo "Custom UDEV for KD9YQK"
     sudo cp udev/* /etc/udev/rules.d/
     sudo udevadm control --reload-rules
     sudo udevadm trigger
