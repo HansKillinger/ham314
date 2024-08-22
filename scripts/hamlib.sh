@@ -8,5 +8,5 @@ tar -zxvf hamlib-4.5.5.tar.gz
 cd hamlib-4.5.5
 ./configure --prefix=/usr/local --enable-static
 make -j 4
-sudo make install
+sudo checkinstall -D make install
 sudo ldconfig
