@@ -10,7 +10,7 @@ else
     echo 'Adding $USER to dialout group'
     sudo usermod -a -G dialout $USER
 fi
-if [ ! -d "$DIRECTORY" ]; then
+if [ ! -d "~/build" ]; then
     echo 'Creating build directory'
     mkdir ~/build -v
 fi
