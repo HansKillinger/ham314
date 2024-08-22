@@ -1,4 +1,4 @@
-# KD9YQK Ham Scripts
+# KD9YQK Ham314
 ## Auto build scripts for Ham Radio Apps on Raspberry Pi OS Bookworm 64bit
 Intended to be used on a fresh OS install with GUI. 
 
