@@ -12,6 +12,6 @@ cd Xastir
 mkdir build
 cd build
 ../configure CPPFLAGS="-I/usr/include/geotiff"
-make 
+make -j 4
 sudo make install
 sudo chmod u+s /usr/local/bin/xastir
