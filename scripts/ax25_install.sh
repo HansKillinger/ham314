@@ -1,6 +1,7 @@
 echo "Install AX.25 Packet Node"
 #sudo dpkg -i ../deb/direwolf*.deb -y
-sudo apt-get install ax25-tools ax25-apps telnet uronode
+sudo apt-get install ax25-tools ax25-apps telnet ax25-node -y
+sudo apt install uronode -y
 sudo cp ../conf/ax25/* /etc/ax25
 sudo touch /etc/ax25/nodebackup.sh
 sudo chmod u+x /etc/ax25/nodebackup.sh
