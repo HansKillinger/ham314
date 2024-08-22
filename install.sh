@@ -19,12 +19,12 @@ bash scripts/debloat.sh
 sleep 1
 bash scripts/ramdrives.sh
 sleep 1
-
-echo "Custom UDEV for DK9YQK"
-sudo cp udev/* /etc/udev/rules.d/
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-
+if echo $USER | grep -qw 'kd9yqk'; then
+    echo "Custom UDEV for DK9YQK"
+    sudo cp udev/* /etc/udev/rules.d/
+    sudo udevadm control --reload-rules
+    sudo udevadm trigger
+fi
 #cd scripts
 #for f in *.sh; do
 #  bash "$f"
