@@ -7,6 +7,6 @@ wget https://github.com/Hamlib/Hamlib/releases/download/4.5.5/hamlib-4.5.5.tar.g
 tar -zxvf hamlib-4.5.5.tar.gz
 cd hamlib-4.5.5
 ./configure --prefix=/usr/local --enable-static
-make
+make -j 4
 sudo make install
 sudo ldconfig
