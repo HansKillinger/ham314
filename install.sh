@@ -16,13 +16,19 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 sleep 1
 bash scripts/debloat.sh
+sleep 1
 bash scripts/ramdrives.sh
+sleep 1
+
+echo "Custom UDEV for DK9YQK"
+sudo cp udev/* /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
 
 #cd scripts
 #for f in *.sh; do
 #  bash "$f"
 #done
-
 
 sudo apt install hamradiomenus -y
 echo 'Install Complete :)'
