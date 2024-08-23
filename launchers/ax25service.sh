@@ -3,26 +3,29 @@
 trap ctrl_c INT
 trap ctrl_c TERM
 function ctrl_c() {
-   echo "CTRL-C pressed, killing direwolf in winlinke mode"
-   sudo killall direwolf
-   sudo killall kissattach
+   sudo nodesave /etc/ax25/nodebackup.sh
+   sudo killall mheardd
    sudo killall ax25d
-   sudo killall -9 direwatch.py
+   sudo killall kissattach
+   sudo killall direwolf
    exit 0
 }
 
+sudo killall mheardd
+sudo killall ax25d
 sudo killall kissattach
+sudo killall direwolf
 
 # zero out old direwolf log file in case /run/ is full
-truncate --size 0 /run/direwolf.log
+truncate --size 0 /var/log/direwolf.log
 
-direwolf -d t -p -q d -t 0 -c /run/direwolf.node.conf | tee /home/pi/direwolf.log &
+direwolf -d t -p -q d -t 0 -c /run/direwolf.node.conf | tee /var/log/direwolf.log &
 
 sleep 5
-sudo modprobe netrom
 nrdevice=`ifconfig | grep nr0 | wc -l`
 if [ $nrdevice -eq 0 ]; then
-  sudo nrattach netrom  # run this once per boot
+   sudo modprobe netrom
+   sudo nrattach netrom  # run this once per boot
 fi
 
 #if [ -n "$WINLINKALSO" ]; then
@@ -39,5 +42,6 @@ sudo /usr/sbin/netromd        # Start the netrom service, lists for nodes/routes
 
 # advertise node on aprs.fi
 while true; do
-  sleep 1200
+   sleep 1200
+   sudo nodesave /etc/ax25/nodebackup.sh
 done
