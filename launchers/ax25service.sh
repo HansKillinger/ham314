@@ -19,7 +19,7 @@ sudo killall direwolf
 # zero out old direwolf log file in case /run/ is full
 truncate --size 0 /var/log/direwolf.log
 
-direwolf -d t -p -q d -t 0 -c /run/direwolf.node.conf | tee /var/log/direwolf.log &
+sudo -u kd9yqk direwolf -t 0 -c /home/kd9yqk/direwolf-node.conf -p > /tmp/direwolf.log &
 
 sleep 5
 nrdevice=`ifconfig | grep nr0 | wc -l`
