@@ -81,7 +81,7 @@ fi
 #######################################
 cmd=(dialog --backtitle "Ham314" --checklist "${installed}" 22 50 16)
 choices=($("${cmd[@]}" "${options[@]}" 2>&1 1>/dev/tty))
-
+clear
 for choice in "${choices[@]}"; do
     case $choice in
         1)
