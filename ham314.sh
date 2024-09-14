@@ -57,18 +57,21 @@ installed="Installed:\n"
 if [ ! -f saves/ham314.direwolf ]; then
     options+=(1 "Direwolf 1.8b (Built 08/22/2024)" off)
 else
+    options+=(1 "Direwolf 1.8b (Built 08/22/2024)" on)
     installed+="Direwolf, "
 fi
 # AX.25 Packet
 if [ ! -f saves/ham314.ax25 ]; then
     options+=(2 "AX.25 Packet Node (Requires Direwolf)" off)
 else
+    options+=(2 "AX.25 Packet Node (Requires Direwolf)" on)
     installed+="AX.25 Packet Node, "
 fi
 # Hamlib
 if [ ! -f saves/ham314.hamlib ]; then
     options+=(3 "Hamlib 4.5.5" off)
 else
+    options+=(3 "Hamlib 4.5.5" on)
     installed+="Hamlib 4.5.5, "
 fi
 
