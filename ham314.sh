@@ -52,36 +52,47 @@ fi
 ###################################
 # Build Checklist
 ###################################
-installed="Installed:\n"
+message="Select the packages you would like to install."
 # Direwolf
 if [ ! -f saves/ham314.direwolf ]; then
     options+=(1 "Direwolf 1.8b (Built 08/22/2024)" off)
 else
     options+=(1 "Direwolf 1.8b (Built 08/22/2024)" on)
-    installed+="Direwolf, "
 fi
 # AX.25 Packet
 if [ ! -f saves/ham314.ax25 ]; then
     options+=(2 "AX.25 Packet Node (Requires Direwolf)" off)
 else
     options+=(2 "AX.25 Packet Node (Requires Direwolf)" on)
-    installed+="AX.25 Packet Node, "
 fi
 # Hamlib
 if [ ! -f saves/ham314.hamlib ]; then
     options+=(3 "Hamlib 4.5.5" off)
 else
     options+=(3 "Hamlib 4.5.5" on)
-    installed+="Hamlib 4.5.5, "
 fi
+# WSJTx
+if [ ! -f saves/ham314.wsjtx ]; then
+    options+=(4 "WSJT-X" off)
+else
+    options+=(4 "WSJT-X" on)
+fi
+# JS8Call
+if [ ! -f saves/ham314.js8call ]; then
+    options+=(5 "JS8Call" off)
+else
+    options+=(5 "JS8Call" on)
+fi
+# Create dialogue box with menu options
 
-
-#######################################
-# Build dialogue box with menu options
-#######################################
-cmd=(dialog --backtitle "Ham314" --checklist "${installed}" 22 50 16)
+cmd=(dialog --backtitle "Ham314" --checklist "${message}" 22 50 16)
 choices=($("${cmd[@]}" "${options[@]}" 2>&1 1>/dev/tty))
+
 clear
+
+##############################
+# Process checked items
+##############################
 for choice in "${choices[@]}"; do
     case $choice in
         1)
@@ -121,6 +132,28 @@ for choice in "${choices[@]}"; do
             if [ ! -f saves/ham314.hamlib ]; then
                 echo "NOT FOUND"
                 install_hamlib
+            else
+                echo "OK"
+            fi
+            ;;
+        4)
+            echo -n "Checking for WSJT-X "
+            sleep 1
+            if [ ! -f saves/ham314.wsjtx ]; then
+                echo "NOT FOUND"
+                sudo apt install wsjtx
+                touch saves/ham314.wsjtx
+            else
+                echo "OK"
+            fi
+            ;;
+        5)
+            echo -n "Checking for JS8Call "
+            sleep 1
+            if [ ! -f saves/ham314.js8call ]; then
+                echo "NOT FOUND"
+                sudo apt install js8call
+                touch saves/ham314.js8call
             else
                 echo "OK"
             fi
