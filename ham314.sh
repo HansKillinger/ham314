@@ -16,7 +16,7 @@ function install_direwolf(){
 function install_hamlib(){
   echo "Installing Hamlib"
   sleep 1
-  sudo dpkg -i install deb/hamlib*.deb
+  sudo dpkg -i deb/hamlib*.deb
   touch saves/ham314.hamlib
   echo "Direwolf Installed"
 }
@@ -24,7 +24,7 @@ function install_hamlib(){
 function install_flrig(){
   echo "Installing FLrig"
   sleep 1
-  sudo dpkg -i install deb/flrig*.deb
+  sudo dpkg -i deb/flrig*.deb
   touch saves/ham314.flrig
   echo "FLrig Installed"
 }
