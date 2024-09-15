@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Comment=Xastir
+Exec=xastir
+Icon=/home/USERNAME/ham314/icons/xastir.png
+Name=Xastir
+NoDisplay=false
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Education;HamRadio;
+X-AppImage-Version=1
