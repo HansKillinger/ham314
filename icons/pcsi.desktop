@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Comment=QSSTV sstv and dsstv (adrm)
+Exec=/home/USERNAME/PCSI/bin/python /home/USERNAME/PCSI/pcsiGUI.py
+GenericName=PCSI
+Icon=/home/USERNAME/ham314/icons/pcsi.png
+Name=PCSI
+NoDisplay=false
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Education;HamRadio;
+X-AppImage-Version=1
