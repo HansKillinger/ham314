@@ -26,6 +26,7 @@ echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
 debuild -us -uc -j$NUMCPUS
 cd ..
 sudo dpkg -i ax25apps_*_*.deb
+sudo apt-mark hold ax25apps
 
 echo "Build ax25-tools"
 cd ax25tools
@@ -35,6 +36,7 @@ echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
 debuild -us -uc -j$NUMCPUS
 cd ..
 sudo dpkg -i ax25tools_*_*.deb
+sudo apt-mark hold ax25tools
 
 echo "Build uronode"
 cd ~/build
@@ -49,6 +51,7 @@ tar xJvf ../uronode_2.15-3.debian.tar.xz
 NUMCPUS=`lscpu | grep CPU\(s\): | awk '{print $2}'`
 echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
 debuild -us -uc -j$NUMCPUS
+cd ..
 sudo dpkg -i uronode_2.15-*.deb
 sudo apt-mark hold uronode
-cd ../..
+cd ..
