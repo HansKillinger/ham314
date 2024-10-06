@@ -35,3 +35,20 @@ echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
 debuild -us -uc -j$NUMCPUS
 cd ..
 sudo dpkg -i ax25tools_*_*.deb
+
+echo "Build uronode"
+cd ~/build
+mkdir uronode
+cd uronode
+wget https://downloads.sourceforge.net/project/uronode/uronode-2.15.tar.gz
+tar xzvf uronode-2.15.tar.gz
+wget http://deb.debian.org/debian/pool/main/u/uronode/uronode_2.15-3.debian.tar.xz
+cp uronode-2.15.tar.gz uronode_2.15.orig.tar.gz
+cd uronode-2.15
+tar xJvf ../uronode_2.15-3.debian.tar.xz
+NUMCPUS=`lscpu | grep CPU\(s\): | awk '{print $2}'`
+echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
+debuild -us -uc -j$NUMCPUS
+sudo dpkg -i uronode_2.15-*.deb
+sudo apt-mark hold uronode
+cd ../..
