@@ -5,7 +5,7 @@ git clone https://www.github.com/wb2osz/direwolf
 cd direwolf
 mkdir build && cd build
 cmake ..
-make -j8
+make -j4
 sudo make install
 # make install-conf
 
