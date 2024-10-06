@@ -7,7 +7,7 @@ mkdir build && cd build
 cmake ..
 make -j4
 sudo make install
-# make install-conf
+make install-conf
 
 #sudo cpack -G DEB
 #sudo apt install ./direwolf-*.deb
